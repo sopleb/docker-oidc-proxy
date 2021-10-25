@@ -6,6 +6,7 @@ local opts = {
     token_endpoint_auth_method = os.getenv("OIDC_AUTH_METHOD") or "client_secret_basic",
     renew_access_token_on_expiry = os.getenv("OIDC_RENEW_ACCESS_TOKEN_ON_EXPIRY") ~= "false",
     scope = os.getenv("OIDC_AUTH_SCOPE") or "openid",
+    group = os.getenv("OIDC_GROUP"),
     iat_slack = 600,
 }
 
@@ -31,6 +32,23 @@ if err then
 
     ngx.say("There was an error while logging in: " .. err)
     ngx.exit(ngx.HTTP_INTERNAL_SERVER_ERROR)
+end
+
+-- https://stackoverflow.com/a/33511182
+local function has_value (tab, val)
+    for index, value in ipairs(tab) do
+        if value == val then
+            return true
+        end
+    end
+
+    return false
+end
+
+if opts.group and not(has_value(res.id_token.groups, opts.group)) then
+    ngx.header.content_type = 'text/html';
+    ngx.say("No are not authorized to access this resource.")
+    ngx.exit(ngx.HTTP_FORBIDDEN)
 end
 
 ngx.log(ngx.INFO, "Authentication successful, setting Auth header...")
