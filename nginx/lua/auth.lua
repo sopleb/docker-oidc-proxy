@@ -1,11 +1,10 @@
 local opts = {
-    redirect_uri = os.getenv("OID_REDIRECT_URI") or "/redirect_uri",
-    discovery = os.getenv("OID_DISCOVERY"),
-    client_id = os.getenv("OID_CLIENT_ID"),
-    client_secret = os.getenv("OID_CLIENT_SECRET"),
+    redirect_uri = os.getenv("OIDC_REDIRECT_URI") or "/redirect_uri",
+    discovery = os.getenv("OIDC_DISCOVERY"),
+    client_id = os.getenv("OIDC_CLIENT_ID"),
+    client_secret = os.getenv("OIDC_CLIENT_SECRET"),
     token_endpoint_auth_method = os.getenv("OIDC_AUTH_METHOD") or "client_secret_basic",
-    -- Backwards compatible with typo 'OIDC_RENEW_ACCESS_TOKEN_ON_EXPIERY'
-    renew_access_token_on_expiry = os.getenv("OIDC_RENEW_ACCESS_TOKEN_ON_EXPIRY") ~= "false" and os.getenv("OIDC_RENEW_ACCESS_TOKEN_ON_EXPIERY") ~= "false",
+    renew_access_token_on_expiry = os.getenv("OIDC_RENEW_ACCESS_TOKEN_ON_EXPIRY") ~= "false",
     scope = os.getenv("OIDC_AUTH_SCOPE") or "openid",
     iat_slack = 600,
 }
