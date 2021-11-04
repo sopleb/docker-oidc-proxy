@@ -23,7 +23,7 @@ environment variables is used in this image:
 * `OIDC_SESSION_NAME`: cookie session name
 
 * `OIDC_REDIRECT_PATH`: Redirect path after authentication
-* `OIDC_DISCOVERY`: OpenID provider well-known discovery URL
+* `OIDC_DISCOVERY_URL`: OpenID provider well-known discovery URL
 * `OIDC_CLIENT_ID`: OpenID Client ID
 * `OIDC_CLIENT_SECRET`: OpenID Client Secret
 * `OIDC_AUTH_METHOD`: OpenID Connect authentication method (`client_secret_basic` or `client_secret_post`)
@@ -37,7 +37,7 @@ environment variables is used in this image:
 
 ```
 docker run \
-  -e OIDC_DISCOVERY=https://my-auth-server/auth \
+  -e OIDC_DISCOVERY_URL=https://my-auth-server/auth \
   -e OIDC_CLIENT_ID=my-client \
   -e OIDC_CLIENT_SECRET=my-secret \
   -e PROXY_HOST=my-service \

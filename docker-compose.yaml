@@ -25,7 +25,7 @@ services:
       - OIDC_SESSION_NAME=oidc_auth
 
       - OIDC_REDIRECT_PATH=/redirect_uri
-      - OIDC_DISCOVERY=http://192.168.99.100:8080/auth/realms/master/.well-known/openid-configuration
+      - OIDC_DISCOVERY_URL=http://192.168.99.100:8080/auth/realms/master/.well-known/openid-configuration
       - OIDC_CLIENT_ID=proxy
       - OIDC_CLIENT_SECRET=dee59d02-b1a9-455a-bd3c-38d2e060bf0f
 

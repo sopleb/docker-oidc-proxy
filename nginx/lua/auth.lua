@@ -1,6 +1,6 @@
 local opts = {
     redirect_uri = os.getenv("OIDC_REDIRECT_URI") or "/redirect_uri",
-    discovery = os.getenv("OIDC_DISCOVERY"),
+    discovery = os.getenv("OIDC_DISCOVERY_URL"),
     client_id = os.getenv("OIDC_CLIENT_ID"),
     client_secret = os.getenv("OIDC_CLIENT_SECRET"),
     token_endpoint_auth_method = os.getenv("OIDC_AUTH_METHOD") or "client_secret_basic",
