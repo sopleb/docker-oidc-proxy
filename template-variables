@@ -1,0 +1,3 @@
+map $host $dns_server {
+  default "$DNS_SERVER";
+}
