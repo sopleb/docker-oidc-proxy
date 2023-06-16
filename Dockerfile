@@ -14,7 +14,7 @@ RUN  apt update && apt upgrade -y && apt-get install curl -y && \
  curl -sSL https://github.com/pintsized/lua-resty-http/archive/v${HTTP_VERSION}.tar.gz | tar xz  && \
  curl -sSL https://github.com/pingidentity/lua-resty-openidc/archive/v${OPENIDC_VERSION}.tar.gz | tar xz && \
  curl -sSL https://github.com/cdbattags/lua-resty-jwt/archive/v${JWT_VERSION}.tar.gz | tar xz && \
- curl -sSL https://github.com/jkeys089/lua-resty-hmac/archive/${HMAC_VERSION}.tar.gz | tar xz && \
+ curl -sSL https://github.com/jkeys089/lua-resty-hmac/archive/v${HMAC_VERSION}.tar.gz | tar xz && \
  cp -r /tmp/lua-resty-session-${SESSION_VERSION}/lib/resty/* /usr/local/openresty/lualib/resty/ && \
  cp -r /tmp/lua-resty-http-${HTTP_VERSION}/lib/resty/* /usr/local/openresty/lualib/resty/ && \
  cp -r /tmp/lua-resty-openidc-${OPENIDC_VERSION}/lib/resty/* /usr/local/openresty/lualib/resty/ && \
