@@ -1,5 +1,5 @@
 FROM openresty/openresty:1.21.4.1-0-alpine
-MAINTAINER Hans Kristian Flaatten <hans.flaatten@evry.com>
+MAINTAINER sopleb <sopleb@pm.me>
 
 ENV \
  SESSION_VERSION=4.0.4 \
