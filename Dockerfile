@@ -8,7 +8,7 @@ ENV \
  JWT_VERSION=0.2.3 \
  HMAC_VERSION=0.06-1
 
-RUN  apk update && apk upgrade && apk add curl && \
+RUN  apt update && apt upgrade && apt-get install curl && \
  cd /tmp && \
  curl -sSL https://github.com/bungle/lua-resty-session/archive/v${SESSION_VERSION}.tar.gz | tar xz && \
  curl -sSL https://github.com/pintsized/lua-resty-http/archive/v${HTTP_VERSION}.tar.gz | tar xz  && \
