@@ -8,7 +8,7 @@ ENV \
  JWT_VERSION=0.2.3 \
  HMAC_VERSION=0.06-1
 
-RUN apk update && apk upgrade && apk add curl tar
+RUN apk update && apk upgrade && apk add curl tar gzip
 
 RUN \
  cd /tmp && \
