@@ -1,4 +1,4 @@
-FROM openresty/openresty:1.21.4.1-0-alpine
+FROM openresty/openresty:1.21.4.1-0-bullseye-fat
 MAINTAINER Hans Kristian Flaatten <hans.flaatten@evry.com>
 
 ENV \
@@ -8,9 +8,7 @@ ENV \
  JWT_VERSION=0.2.3 \
  HMAC_VERSION=0.06-1
 
-RUN apk update && apk upgrade && apk add curl tar gzip
-
-RUN \
+RUN  apk update && apk upgrade && apk add curl && \
  cd /tmp && \
  curl -sSL https://github.com/bungle/lua-resty-session/archive/v${SESSION_VERSION}.tar.gz | tar xz && \
  curl -sSL https://github.com/pintsized/lua-resty-http/archive/v${HTTP_VERSION}.tar.gz | tar xz  && \
