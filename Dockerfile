@@ -10,11 +10,11 @@ ENV \
 
 RUN  apt update && apt upgrade -y && apt-get install curl -y && \
  cd /tmp && \
- curl -sSL https://codeload.github.com/bungle/lua-resty-session/archive/refs/tags/v${SESSION_VERSION}.tar.gz | tar xz && \
- curl -sSL https://codeload.github.com/pintsized/lua-resty-http/archive/refs/tags/v${HTTP_VERSION}.tar.gz | tar xz  && \
- curl -sSL https://codeload.github.com/pingidentity/lua-resty-openidc/archive/refs/tags/v${OPENIDC_VERSION}.tar.gz | tar xz && \
- curl -sSL https://codeload.github.com/cdbattags/lua-resty-jwt/archive/refs/tags/v${JWT_VERSION}.tar.gz | tar xz && \
- curl -sSL https://codeload.github.com/jkeys089/lua-resty-hmac/archive/refs/tags/v${HMAC_VERSION}.tar.gz | tar xz && \
+ curl -sSL https://codeload.github.com/bungle/lua-resty-session/tar.gz/refs/tags/v${SESSION_VERSION} | tar xz && \
+ curl -sSL https://codeload.github.com/pintsized/lua-resty-http/tar.gz/refs/tags/v${HTTP_VERSION} | tar xz  && \
+ curl -sSL https://codeload.github.com/pingidentity/lua-resty-tar.gz/archive/refs/tags/v${OPENIDC_VERSION} | tar xz && \
+ curl -sSL https://codeload.github.com/cdbattags/lua-resty-jwt/tar.gz/refs/tags/v${JWT_VERSION} | tar xz && \
+ curl -sSL https://codeload.github.com/jkeys089/lua-resty-hmac/tar.gz/refs/tags/v${HMAC_VERSION} | tar xz && \
  cp -r /tmp/lua-resty-session-${SESSION_VERSION}/lib/resty/* /usr/local/openresty/lualib/resty/ && \
  cp -r /tmp/lua-resty-http-${HTTP_VERSION}/lib/resty/* /usr/local/openresty/lualib/resty/ && \
  cp -r /tmp/lua-resty-openidc-${OPENIDC_VERSION}/lib/resty/* /usr/local/openresty/lualib/resty/ && \
